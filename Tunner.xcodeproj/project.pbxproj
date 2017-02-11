@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CCBC77B1968BD962A7B4A6A /* Pods_Tunner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA92E83430C45699F5D227 /* Pods_Tunner.framework */; };
+		A075FD5D1E4F8DA300EE508D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A075FD5C1E4F8DA300EE508D /* AppDelegate.swift */; };
+		A075FD5F1E4F8DA300EE508D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A075FD5E1E4F8DA300EE508D /* ViewController.swift */; };
+		A075FD621E4F8DA300EE508D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A075FD601E4F8DA300EE508D /* Main.storyboard */; };
+		A075FD641E4F8DA300EE508D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A075FD631E4F8DA300EE508D /* Assets.xcassets */; };
+		A075FD671E4F8DA300EE508D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A075FD651E4F8DA300EE508D /* LaunchScreen.storyboard */; };
+		A075FD721E4F8DA300EE508D /* TunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A075FD711E4F8DA300EE508D /* TunnerTests.swift */; };
+		D9ED708E4DA9C6A5FD9B2034 /* Pods_TunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7894718B0F0571DB4C1EE3 /* Pods_TunnerTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A075FD6E1E4F8DA300EE508D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A075FD511E4F8DA300EE508D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A075FD581E4F8DA300EE508D;
+			remoteInfo = Tunner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15935F64C2E1FDAD6A6039A1 /* Pods-Tunner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tunner/Pods-Tunner.debug.xcconfig"; sourceTree = "<group>"; };
+		49ABF41334D00A40848454CC /* Pods-TunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TunnerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TunnerTests/Pods-TunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		994E68D0B56BEB93F193C350 /* Pods-TunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TunnerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TunnerTests/Pods-TunnerTests.release.xcconfig"; sourceTree = "<group>"; };
+		A075FD591E4F8DA300EE508D /* Tunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A075FD5C1E4F8DA300EE508D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A075FD5E1E4F8DA300EE508D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A075FD611E4F8DA300EE508D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A075FD631E4F8DA300EE508D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A075FD661E4F8DA300EE508D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A075FD681E4F8DA300EE508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A075FD6D1E4F8DA300EE508D /* TunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A075FD711E4F8DA300EE508D /* TunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnerTests.swift; sourceTree = "<group>"; };
+		A075FD731E4F8DA300EE508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEBA92E83430C45699F5D227 /* Pods_Tunner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2483323CDD8E2D8BDA99A9 /* Pods-Tunner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tunner/Pods-Tunner.release.xcconfig"; sourceTree = "<group>"; };
+		FF7894718B0F0571DB4C1EE3 /* Pods_TunnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TunnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A075FD561E4F8DA300EE508D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CCBC77B1968BD962A7B4A6A /* Pods_Tunner.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A075FD6A1E4F8DA300EE508D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9ED708E4DA9C6A5FD9B2034 /* Pods_TunnerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CBB844DB2C119D50E29BC2B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15935F64C2E1FDAD6A6039A1 /* Pods-Tunner.debug.xcconfig */,
+				BA2483323CDD8E2D8BDA99A9 /* Pods-Tunner.release.xcconfig */,
+				49ABF41334D00A40848454CC /* Pods-TunnerTests.debug.xcconfig */,
+				994E68D0B56BEB93F193C350 /* Pods-TunnerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A075FD501E4F8DA300EE508D = {
+			isa = PBXGroup;
+			children = (
+				A075FD5B1E4F8DA300EE508D /* Tunner */,
+				A075FD701E4F8DA300EE508D /* TunnerTests */,
+				A075FD5A1E4F8DA300EE508D /* Products */,
+				8CBB844DB2C119D50E29BC2B /* Pods */,
+				CCF92CB0D6C3E72C51A5B901 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A075FD5A1E4F8DA300EE508D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A075FD591E4F8DA300EE508D /* Tunner.app */,
+				A075FD6D1E4F8DA300EE508D /* TunnerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A075FD5B1E4F8DA300EE508D /* Tunner */ = {
+			isa = PBXGroup;
+			children = (
+				A075FD5C1E4F8DA300EE508D /* AppDelegate.swift */,
+				A075FD5E1E4F8DA300EE508D /* ViewController.swift */,
+				A075FD601E4F8DA300EE508D /* Main.storyboard */,
+				A075FD631E4F8DA300EE508D /* Assets.xcassets */,
+				A075FD651E4F8DA300EE508D /* LaunchScreen.storyboard */,
+				A075FD681E4F8DA300EE508D /* Info.plist */,
+			);
+			path = Tunner;
+			sourceTree = "<group>";
+		};
+		A075FD701E4F8DA300EE508D /* TunnerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A075FD711E4F8DA300EE508D /* TunnerTests.swift */,
+				A075FD731E4F8DA300EE508D /* Info.plist */,
+			);
+			path = TunnerTests;
+			sourceTree = "<group>";
+		};
+		CCF92CB0D6C3E72C51A5B901 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEBA92E83430C45699F5D227 /* Pods_Tunner.framework */,
+				FF7894718B0F0571DB4C1EE3 /* Pods_TunnerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A075FD581E4F8DA300EE508D /* Tunner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A075FD761E4F8DA300EE508D /* Build configuration list for PBXNativeTarget "Tunner" */;
+			buildPhases = (
+				C3D2EDF712FD2D35420F7773 /* [CP] Check Pods Manifest.lock */,
+				A075FD551E4F8DA300EE508D /* Sources */,
+				A075FD561E4F8DA300EE508D /* Frameworks */,
+				A075FD571E4F8DA300EE508D /* Resources */,
+				9C97891AA8AC03DD70F3D9FE /* [CP] Embed Pods Frameworks */,
+				E417B12043EC193EAB0AC081 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tunner;
+			productName = Tunner;
+			productReference = A075FD591E4F8DA300EE508D /* Tunner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A075FD6C1E4F8DA300EE508D /* TunnerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A075FD791E4F8DA300EE508D /* Build configuration list for PBXNativeTarget "TunnerTests" */;
+			buildPhases = (
+				458ABF14AAF88780501A8C79 /* [CP] Check Pods Manifest.lock */,
+				A075FD691E4F8DA300EE508D /* Sources */,
+				A075FD6A1E4F8DA300EE508D /* Frameworks */,
+				A075FD6B1E4F8DA300EE508D /* Resources */,
+				E76BC36C923F9762C519164A /* [CP] Embed Pods Frameworks */,
+				4CFC3FE81745FA6CF93FF8E6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A075FD6F1E4F8DA300EE508D /* PBXTargetDependency */,
+			);
+			name = TunnerTests;
+			productName = TunnerTests;
+			productReference = A075FD6D1E4F8DA300EE508D /* TunnerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A075FD511E4F8DA300EE508D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Raphael Cruzeiro";
+				TargetAttributes = {
+					A075FD581E4F8DA300EE508D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7E4DSQQ9E2;
+						ProvisioningStyle = Automatic;
+					};
+					A075FD6C1E4F8DA300EE508D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7E4DSQQ9E2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A075FD581E4F8DA300EE508D;
+					};
+				};
+			};
+			buildConfigurationList = A075FD541E4F8DA300EE508D /* Build configuration list for PBXProject "Tunner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A075FD501E4F8DA300EE508D;
+			productRefGroup = A075FD5A1E4F8DA300EE508D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A075FD581E4F8DA300EE508D /* Tunner */,
+				A075FD6C1E4F8DA300EE508D /* TunnerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A075FD571E4F8DA300EE508D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A075FD671E4F8DA300EE508D /* LaunchScreen.storyboard in Resources */,
+				A075FD641E4F8DA300EE508D /* Assets.xcassets in Resources */,
+				A075FD621E4F8DA300EE508D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A075FD6B1E4F8DA300EE508D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		458ABF14AAF88780501A8C79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4CFC3FE81745FA6CF93FF8E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TunnerTests/Pods-TunnerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C97891AA8AC03DD70F3D9FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tunner/Pods-Tunner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3D2EDF712FD2D35420F7773 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E417B12043EC193EAB0AC081 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tunner/Pods-Tunner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E76BC36C923F9762C519164A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TunnerTests/Pods-TunnerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A075FD551E4F8DA300EE508D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A075FD5F1E4F8DA300EE508D /* ViewController.swift in Sources */,
+				A075FD5D1E4F8DA300EE508D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A075FD691E4F8DA300EE508D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A075FD721E4F8DA300EE508D /* TunnerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A075FD6F1E4F8DA300EE508D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A075FD581E4F8DA300EE508D /* Tunner */;
+			targetProxy = A075FD6E1E4F8DA300EE508D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A075FD601E4F8DA300EE508D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A075FD611E4F8DA300EE508D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A075FD651E4F8DA300EE508D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A075FD661E4F8DA300EE508D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A075FD741E4F8DA300EE508D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A075FD751E4F8DA300EE508D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A075FD771E4F8DA300EE508D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15935F64C2E1FDAD6A6039A1 /* Pods-Tunner.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7E4DSQQ9E2;
+				INFOPLIST_FILE = Tunner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelcruzeiro.Tunner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A075FD781E4F8DA300EE508D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA2483323CDD8E2D8BDA99A9 /* Pods-Tunner.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7E4DSQQ9E2;
+				INFOPLIST_FILE = Tunner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelcruzeiro.Tunner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A075FD7A1E4F8DA300EE508D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49ABF41334D00A40848454CC /* Pods-TunnerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7E4DSQQ9E2;
+				INFOPLIST_FILE = TunnerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelcruzeiro.TunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tunner.app/Tunner";
+			};
+			name = Debug;
+		};
+		A075FD7B1E4F8DA300EE508D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 994E68D0B56BEB93F193C350 /* Pods-TunnerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7E4DSQQ9E2;
+				INFOPLIST_FILE = TunnerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raphaelcruzeiro.TunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tunner.app/Tunner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A075FD541E4F8DA300EE508D /* Build configuration list for PBXProject "Tunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A075FD741E4F8DA300EE508D /* Debug */,
+				A075FD751E4F8DA300EE508D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A075FD761E4F8DA300EE508D /* Build configuration list for PBXNativeTarget "Tunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A075FD771E4F8DA300EE508D /* Debug */,
+				A075FD781E4F8DA300EE508D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A075FD791E4F8DA300EE508D /* Build configuration list for PBXNativeTarget "TunnerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A075FD7A1E4F8DA300EE508D /* Debug */,
+				A075FD7B1E4F8DA300EE508D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A075FD511E4F8DA300EE508D /* Project object */;
+}
