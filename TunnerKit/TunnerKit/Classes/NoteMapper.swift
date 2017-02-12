@@ -28,12 +28,12 @@ class NoteMapper {
     
     init(referenceFrequency: Double = 440) {
         self.referenceFrequency = referenceFrequency
-        
         calculateFrequencyTable()
     }
     
     private func calculateFrequencyTable() {
         calculateBaseFrequency()
+        
         let referenceA = Note(
             nameWithSharp: "A",
             nameWithFlat: "A",
@@ -56,7 +56,6 @@ class NoteMapper {
         }
         
         recursiveCalculation()
-        
     }
     
     func calculateNote(from: Note, halfSteps: Int) -> Note {
@@ -82,6 +81,17 @@ class NoteMapper {
             frequency: frequency,
             octave: octave
         )
+    }
+    
+    func note(for frequency: Double) -> Note {
+        let closestMatch = frequencyTable.reduce(frequencyTable.first!) { prev, next in
+            if abs(prev.frequency - frequency) < abs(next.frequency - frequency) {
+                return prev
+            }
+            return next
+        }
+        
+        return closestMatch
     }
     
     private func calculateBaseFrequency() {

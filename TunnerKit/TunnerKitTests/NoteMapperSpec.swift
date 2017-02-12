@@ -92,6 +92,26 @@ class NoteMapperSpec: QuickSpec {
                     expect(result.octave).to(equal(3))
                 }
             }
+            
+            describe("closest note matching") {
+            
+                it("should correctly match A4") {
+                    expect(sut.note(for: 440).nameWithSharp).to(equal("A"))
+                }
+                
+                it("should correctly match A4 for a value close to 440 Hz") {
+                    expect(sut.note(for: 430).nameWithSharp).to(equal("A"))
+                }
+                
+                it("should correctly match A4b") {
+                    expect(sut.note(for: 415.3).nameWithFlat).to(equal("A♭"))
+                }
+                
+                it("should correctly match A4b for a frequency close to 415.3 Hz") {
+                    expect(sut.note(for: 420).nameWithFlat).to(equal("A♭"))
+                }
+            
+            }
         
         }
         
