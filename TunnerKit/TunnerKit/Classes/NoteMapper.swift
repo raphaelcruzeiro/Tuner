@@ -24,6 +24,9 @@ class NoteMapper {
         var nameWithFlat: String
         var frequency: Double
         var octave: Int
+        
+        // Should vary from -1 to 1. 0 is good, negative is tunned bellow, postive is above.
+        var accuracy: Double = 0
     }
     
     init(referenceFrequency: Double = 440) {
@@ -38,7 +41,8 @@ class NoteMapper {
             nameWithSharp: "A",
             nameWithFlat: "A",
             frequency: referenceFrequency,
-            octave: 0
+            octave: 0,
+            accuracy: 0
         )
         
         let first = calculateNote(from: referenceA, halfSteps: -9)
@@ -79,17 +83,32 @@ class NoteMapper {
             nameWithSharp: noteNamesWithSharps[nameIndex],
             nameWithFlat: noteNamesWithFlats[nameIndex],
             frequency: frequency,
-            octave: octave
+            octave: octave,
+            accuracy: 0
         )
     }
     
     func note(for frequency: Double) -> Note {
-        let closestMatch = frequencyTable.reduce(frequencyTable.first!) { prev, next in
+        var closestMatch = frequencyTable.reduce(frequencyTable.first!) { prev, next in
             if abs(prev.frequency - frequency) < abs(next.frequency - frequency) {
                 return prev
             }
             return next
         }
+        
+        var difference: Double = 0
+        
+        if closestMatch.frequency > frequency {
+            let halfStepBellow = calculateNote(from: closestMatch, halfSteps: -1)
+            difference = closestMatch.frequency - halfStepBellow.frequency
+        }
+        else if closestMatch.frequency < frequency {
+            let halfStepAbove = calculateNote(from: closestMatch, halfSteps: 1)
+            difference = halfStepAbove.frequency - closestMatch.frequency
+        }
+        
+        let delta = closestMatch.frequency - frequency
+        closestMatch.accuracy = (delta / difference) * -1
         
         return closestMatch
     }

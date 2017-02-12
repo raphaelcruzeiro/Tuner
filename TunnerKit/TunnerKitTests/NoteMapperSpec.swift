@@ -42,7 +42,7 @@ class NoteMapperSpec: QuickSpec {
         
             describe("note calculation") {
         
-                let A = NoteMapper.Note(nameWithSharp: "A", nameWithFlat: "A", frequency: 440, octave: 4)
+                let A = NoteMapper.Note(nameWithSharp: "A", nameWithFlat: "A", frequency: 440, octave: 4, accuracy: 0)
                 
                 it("should calculate one half step bellow A correctly") {
                     let result = sut.calculateNote(from: A, halfSteps: -1)
@@ -96,19 +96,27 @@ class NoteMapperSpec: QuickSpec {
             describe("closest note matching") {
             
                 it("should correctly match A4") {
-                    expect(sut.note(for: 440).nameWithSharp).to(equal("A"))
+                    let note = sut.note(for: 440)
+                    expect(note.nameWithSharp).to(equal("A"))
+                    expect(note.accuracy).to(beCloseTo(0, within: 0.01))
                 }
                 
                 it("should correctly match A4 for a value close to 440 Hz") {
-                    expect(sut.note(for: 430).nameWithSharp).to(equal("A"))
+                    let note = sut.note(for: 430)
+                    expect(note.nameWithSharp).to(equal("A"))
+                    expect(note.accuracy).to(beCloseTo(-0.4, within: 0.01))
                 }
                 
                 it("should correctly match A4b") {
-                    expect(sut.note(for: 415.3).nameWithFlat).to(equal("A♭"))
+                    let note = sut.note(for: 415.3)
+                    expect(note.nameWithFlat).to(equal("A♭"))
+                    expect(note.accuracy).to(beCloseTo(0, within: 0.01))
                 }
                 
                 it("should correctly match A4b for a frequency close to 415.3 Hz") {
-                    expect(sut.note(for: 420).nameWithFlat).to(equal("A♭"))
+                    let note = sut.note(for: 420)
+                    expect(note.nameWithFlat).to(equal("A♭"))
+                    expect(note.accuracy).to(beCloseTo(0.19, within: 0.01))
                 }
             
             }
