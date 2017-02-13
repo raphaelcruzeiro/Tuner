@@ -9,32 +9,54 @@
 import Foundation
 import AudioKit
 
+public protocol TunnerDelegate: NSObjectProtocol {
+    func didMatchNote(note: NoteMapper.Note)
+}
+
 public class Tunner {
 
     private var microphone: AKMicrophone!
     private var tracker: AKFrequencyTracker!
     private var silence: AKBooster!
     private var timer: Timer?
-    
+    private var noteMapper: NoteMapper!
+
+    public weak var delegate: TunnerDelegate?
+
+    var referenceFrequency: Double = 440 {
+        didSet {
+            noteMapper = NoteMapper(referenceFrequency: referenceFrequency)
+        }
+    }
+
     public init() {
         AKSettings.audioInputEnabled = true
-        
+
         microphone = AKMicrophone()
         tracker = AKFrequencyTracker(microphone)
         silence = AKBooster(tracker, gain: 0)
+
+        noteMapper = NoteMapper(referenceFrequency: referenceFrequency)
     }
-    
+
     public func start() {
         AudioKit.output = silence
         AudioKit.start()
-        
-        timer = Timer(timeInterval: 0.3, target: self, selector: #selector(Tunner.timerTick), userInfo: nil, repeats: true)
+
+        timer = Timer(
+            timeInterval: 0.3,
+            target: self,
+            selector: #selector(Tunner.timerTick),
+            userInfo: nil,
+            repeats: true
+        )
     }
-    
+
     @objc func timerTick() {
         if tracker.amplitude > 0.1 {
-            let frequency = tracker.frequency
+            let note = noteMapper.note(for: tracker.frequency)
+            delegate?.didMatchNote(note: note)
         }
     }
-    
+
 }
