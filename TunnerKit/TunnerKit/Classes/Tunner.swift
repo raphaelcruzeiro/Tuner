@@ -39,6 +39,10 @@ public class Tunner {
         noteMapper = NoteMapper(referenceFrequency: referenceFrequency)
     }
 
+    deinit {
+        stop()
+    }
+
     public func start() {
         AudioKit.output = silence
         AudioKit.start()
@@ -50,6 +54,11 @@ public class Tunner {
             userInfo: nil,
             repeats: true
         )
+    }
+
+    public func stop() {
+        AudioKit.stop()
+        timer?.invalidate()
     }
 
     @objc func timerTick() {
