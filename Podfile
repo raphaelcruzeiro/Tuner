@@ -1,4 +1,4 @@
-workspace 'Tunner'
+workspace 'Tuner'
 use_frameworks!
 platform :ios, '10.0'
 
@@ -8,21 +8,21 @@ def testFrameworks
     pod 'Nimble'
 end
 
-target 'Tunner' do
-  project 'Tunner.xcodeproj'
+target 'Tuner' do
+  project 'Tuner.xcodeproj'
 
-  target 'TunnerTests' do
+  target 'TunerTests' do
     testFrameworks
   end
 
 end
 
-target 'TunnerKit' do
-    project 'TunnerKit/TunnerKit.xcodeproj'
+target 'TunerKit' do
+    project 'TunerKit/TunerKit.xcodeproj'
     
     pod 'AudioKit'
     
-    target 'TunnerKitTests' do
+    target 'TunerKitTests' do
         testFrameworks
     end
     
