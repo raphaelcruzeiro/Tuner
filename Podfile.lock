@@ -1,18 +1,21 @@
 PODS:
-  - AudioKit (3.5.2)
+  - AudioKit (3.5.3)
+  - Cartography (1.0.1)
   - Nimble (6.0.1)
-  - Quick (1.0.0)
+  - Quick (1.1.0)
 
 DEPENDENCIES:
   - AudioKit
+  - Cartography
   - Nimble
   - Quick
 
 SPEC CHECKSUMS:
-  AudioKit: 77858cbdfc0d083c7ffba25e9bfad5de5921f944
+  AudioKit: bf2ebc611bb9b8107dcbe14f8356c761ee8fcc12
+  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
-  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
 
-PODFILE CHECKSUM: 858ba560371c1487ba1d6138c19cd4948415e6ad
+PODFILE CHECKSUM: 7f0930ff6b4538f2bc983ec70af4e425825485cd
 
 COCOAPODS: 1.2.0

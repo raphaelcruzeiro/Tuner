@@ -10,6 +10,9 @@ end
 
 target 'Tuner' do
   project 'Tuner.xcodeproj'
+  
+  pod 'Cartography'
+  pod 'AudioKit'
 
   target 'TunerTests' do
     testFrameworks

@@ -22,13 +22,13 @@ public class NoteMapper {
     var frequencyTable = [Note]()
 
     public struct Note {
-        var nameWithSharp: String
-        var nameWithFlat: String
-        var frequency: Double
-        var octave: Int
+        public var nameWithSharp: String
+        public var nameWithFlat: String
+        public var frequency: Double
+        public var octave: Int
 
         // Should vary from -1 to 1. 0 is good, negative is tunned bellow, postive is above.
-        var accuracy: Double = 0
+        public var accuracy: Double = 0
     }
 
     init(referenceFrequency: Double = 440) {

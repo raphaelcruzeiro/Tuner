@@ -22,6 +22,8 @@ public class Tuner {
     private var noteMapper: NoteMapper!
 
     public weak var delegate: TunerDelegate?
+    
+    public init() {}
 
     var referenceFrequency: Double = 440 {
         didSet {
@@ -29,43 +31,37 @@ public class Tuner {
         }
     }
 
-    public init() {
-        AKSettings.audioInputEnabled = true
-
-        microphone = AKMicrophone()
-        tracker = AKFrequencyTracker(microphone)
-        silence = AKBooster(tracker, gain: 0)
-
-        noteMapper = NoteMapper(referenceFrequency: referenceFrequency)
-    }
-
     deinit {
         stop()
     }
 
     public func start() {
+        AKSettings.audioInputEnabled = true
+        
+        microphone = AKMicrophone()
+        tracker = AKFrequencyTracker(microphone)
+        silence = AKBooster(tracker, gain:  0)
+        
+        noteMapper = NoteMapper(referenceFrequency: referenceFrequency)
+        
         AudioKit.output = silence
         AudioKit.start()
+        microphone.start()
+        tracker.start()
+        
 
-        timer = Timer(
-            timeInterval: 0.3,
-            target: self,
-            selector: #selector(Tuner.timerTick),
-            userInfo: nil,
-            repeats: true
-        )
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [unowned self] _ in
+            print(self.tracker.amplitude)
+            if self.tracker.amplitude > 0.05 {
+                let note = self.noteMapper.note(for: self.tracker.frequency)
+                self.delegate?.didMatchNote(note: note)
+            }
+        }
     }
 
     public func stop() {
         AudioKit.stop()
         timer?.invalidate()
-    }
-
-    @objc func timerTick() {
-        if tracker.amplitude > 0.1 {
-            let note = noteMapper.note(for: tracker.frequency)
-            delegate?.didMatchNote(note: note)
-        }
     }
 
 }

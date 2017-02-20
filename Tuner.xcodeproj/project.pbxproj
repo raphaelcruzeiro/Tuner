@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3CCBC77B1968BD962A7B4A6A /* Pods_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA92E83430C45699F5D227 /* Pods_Tuner.framework */; };
+		A0597DBC1E5B977C005B23DD /* TunerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0597DBB1E5B977C005B23DD /* TunerKit.framework */; };
+		A0597DBD1E5B977C005B23DD /* TunerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0597DBB1E5B977C005B23DD /* TunerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A075FD5D1E4F8DA300EE508D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A075FD5C1E4F8DA300EE508D /* AppDelegate.swift */; };
 		A075FD5F1E4F8DA300EE508D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A075FD5E1E4F8DA300EE508D /* ViewController.swift */; };
 		A075FD621E4F8DA300EE508D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A075FD601E4F8DA300EE508D /* Main.storyboard */; };
@@ -27,10 +29,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A0597DBE1E5B977C005B23DD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0597DBD1E5B977C005B23DD /* TunerKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		15935F64C2E1FDAD6A6039A1 /* Pods-Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tuner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tuner/Pods-Tuner.debug.xcconfig"; sourceTree = "<group>"; };
 		49ABF41334D00A40848454CC /* Pods-TunerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TunerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TunerTests/Pods-TunerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		994E68D0B56BEB93F193C350 /* Pods-TunerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TunerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TunerTests/Pods-TunerTests.release.xcconfig"; sourceTree = "<group>"; };
+		A0597DBB1E5B977C005B23DD /* TunerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TunerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A075FD591E4F8DA300EE508D /* Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A075FD5C1E4F8DA300EE508D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A075FD5E1E4F8DA300EE508D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0597DBC1E5B977C005B23DD /* TunerKit.framework in Frameworks */,
 				3CCBC77B1968BD962A7B4A6A /* Pods_Tuner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +98,7 @@
 		A075FD501E4F8DA300EE508D = {
 			isa = PBXGroup;
 			children = (
+				A0597DBB1E5B977C005B23DD /* TunerKit.framework */,
 				A075FD5B1E4F8DA300EE508D /* Tuner */,
 				A075FD701E4F8DA300EE508D /* TunerTests */,
 				A075FD5A1E4F8DA300EE508D /* Products */,
@@ -141,6 +160,7 @@
 				A075FD571E4F8DA300EE508D /* Resources */,
 				9C97891AA8AC03DD70F3D9FE /* [CP] Embed Pods Frameworks */,
 				E417B12043EC193EAB0AC081 /* [CP] Copy Pods Resources */,
+				A0597DBE1E5B977C005B23DD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -547,6 +567,7 @@
 				A075FD781E4F8DA300EE508D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A075FD791E4F8DA300EE508D /* Build configuration list for PBXNativeTarget "TunerTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +576,7 @@
 				A075FD7B1E4F8DA300EE508D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
