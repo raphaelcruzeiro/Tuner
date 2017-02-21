@@ -2,7 +2,7 @@
 <testsuites name='TunerKitTests.xctest' tests='16' failures='0'>
   <testsuite name='TunerTests.TunerTests' tests='2' failures='0'>
     <testcase classname='TunerTests.TunerTests' name='testExample' time='0.001'/>
-    <testcase classname='TunerTests.TunerTests' name='testPerformanceExample' time='0.307'/>
+    <testcase classname='TunerTests.TunerTests' name='testPerformanceExample' time='0.318'/>
   </testsuite>
   <testsuite name='TunerKitTests.NoteMapperSpec' tests='12' failures='0'>
     <testcase classname='TunerKitTests.NoteMapperSpec' name='initialization__should_calculate_the_base_frequency' time='0.008'/>
@@ -15,11 +15,11 @@
     <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_14_half_steps_bellow_A_correctly' time='0.003'/>
     <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4' time='0.003'/>
     <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4_for_a_value_close_to_440_Hz' time='0.003'/>
-    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4b' time='0.004'/>
-    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4b_for_a_frequency_close_to_415_3_Hz' time='0.004'/>
+    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4b' time='0.003'/>
+    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4b_for_a_frequency_close_to_415_3_Hz' time='0.003'/>
   </testsuite>
   <testsuite name='TunerKitTests.TunerKitTests' tests='2' failures='0'>
     <testcase classname='TunerKitTests.TunerKitTests' name='testExample' time='0.001'/>
-    <testcase classname='TunerKitTests.TunerKitTests' name='testPerformanceExample' time='0.312'/>
+    <testcase classname='TunerKitTests.TunerKitTests' name='testPerformanceExample' time='0.319'/>
   </testsuite>
 </testsuites>
