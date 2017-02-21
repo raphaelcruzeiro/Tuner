@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Tuner.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A0AE9CAA1E4F8E4800E5AB0E"
+               BuildableName = "TunerKitTests.xctest"
+               BlueprintName = "TunerKitTests"
+               ReferencedContainer = "container:TunerKit/TunerKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
