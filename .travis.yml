@@ -1,0 +1,8 @@
+language: objective-c
+osx_image: xcode8
+install:
+- ./install_swiftlint.sh
+- gem install bundler
+script:
+- swiftlint
+- ./build_and_test.sh
