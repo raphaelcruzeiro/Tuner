@@ -9,16 +9,20 @@
 import UIKit
 import Cartography
 import TunerKit
+import AudioKit
 
 class ViewController: UIViewController {
     
     let label = UILabel()
     var tuner: Tuner!
+    
+    var plot: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(label)
+        view.backgroundColor = .white
         
         constrain(view, label) { view, label in
             label.centerY == view.centerY
@@ -38,17 +42,20 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         tuner.start()
+        
+        plot = tuner.plot(frame: CGRect(x: 0, y: view.frame.height / 2 + 100, width: view.frame.size.width, height: 300))
+        
+        guard let plot = plot as? AKNodeOutputPlot else { return }
+        plot.plotType = .buffer
+        plot.shouldFill = true
+        plot.shouldMirror = true
+        plot.color = UIColor.blue
+        view.addSubview(plot)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
         tuner.stop()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
