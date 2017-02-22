@@ -5,4 +5,5 @@ install:
 - gem install bundler
 script:
 - swiftlint
-- ./build_and_test.sh
+- bundle install
+- bundle exec fastlane test
