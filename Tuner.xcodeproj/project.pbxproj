@@ -148,6 +148,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A075FD761E4F8DA300EE508D /* Build configuration list for PBXNativeTarget "Tuner" */;
 			buildPhases = (
+				A05567701E5DB1E4008E20A4 /* ShellScript */,
 				C3D2EDF712FD2D35420F7773 /* [CP] Check Pods Manifest.lock */,
 				A075FD551E4F8DA300EE508D /* Sources */,
 				A075FD561E4F8DA300EE508D /* Frameworks */,
@@ -292,6 +293,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tuner/Pods-Tuner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A05567701E5DB1E4008E20A4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		C3D2EDF712FD2D35420F7773 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -22,7 +22,7 @@ public class Tuner {
     private var noteMapper: NoteMapper!
 
     public weak var delegate: TunerDelegate?
-    
+
     public init() {}
 
     var referenceFrequency: Double = 440 {
@@ -30,7 +30,7 @@ public class Tuner {
             noteMapper = NoteMapper(referenceFrequency: referenceFrequency)
         }
     }
-    
+
     public func plot(frame: CGRect) -> AKNodeOutputPlot? {
         return AKNodeOutputPlot(microphone, frame: frame)
     }
@@ -41,18 +41,18 @@ public class Tuner {
 
     public func start() {
         AKSettings.audioInputEnabled = true
-        
+
         microphone = AKMicrophone()
         tracker = AKFrequencyTracker(microphone)
         silence = AKBooster(tracker, gain:  0)
-        
+
         noteMapper = NoteMapper(referenceFrequency: referenceFrequency)
-        
+
         AudioKit.output = silence
         AudioKit.start()
         microphone.start()
         tracker.start()
-        
+
 
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [unowned self] _ in
             print(self.tracker.amplitude)
