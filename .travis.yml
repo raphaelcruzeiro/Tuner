@@ -2,6 +2,11 @@ language: objective-c
 osx_image: xcode8.2
 install:
 - ./install_swiftlint.sh
+- brew update
+- brew install rbenv
+- rbenv install 2.3.1
+- rbenv local 2.3.1
+- rbenv rehash
 - gem install bundler
 - rbenv rehash
 script:
