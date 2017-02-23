@@ -10,6 +10,7 @@
 		5334CBC5B0AF3E9B2A6AD1D1 /* Pods_TunerKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821FD166D8F88C97455D5AEA /* Pods_TunerKitTests.framework */; };
 		63E64DDEEA41EAB71301F1C5 /* Pods_TunerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113E7E957DDA61212F9024AC /* Pods_TunerKit.framework */; };
 		A0AE9CAC1E4F8E4800E5AB0E /* TunerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AE9CA21E4F8E4800E5AB0E /* TunerKit.framework */; };
+		A0AE9CB11E4F8E4800E5AB0E /* TunerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE9CB01E4F8E4800E5AB0E /* TunerKitTests.swift */; };
 		A0AE9CB31E4F8E4800E5AB0E /* TunerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A0AE9CA51E4F8E4800E5AB0E /* TunerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0AE9CBE1E4F8FE600E5AB0E /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE9CBD1E4F8FE600E5AB0E /* Tuner.swift */; };
 		A0AE9CC01E4F93CE00E5AB0E /* NoteMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE9CBF1E4F93CE00E5AB0E /* NoteMapper.swift */; };
@@ -35,6 +36,7 @@
 		A0AE9CA51E4F8E4800E5AB0E /* TunerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TunerKit.h; sourceTree = "<group>"; };
 		A0AE9CA61E4F8E4800E5AB0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0AE9CAB1E4F8E4800E5AB0E /* TunerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TunerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0AE9CB01E4F8E4800E5AB0E /* TunerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerKitTests.swift; sourceTree = "<group>"; };
 		A0AE9CB21E4F8E4800E5AB0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0AE9CBD1E4F8FE600E5AB0E /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tuner.swift; path = Classes/Tuner.swift; sourceTree = "<group>"; };
 		A0AE9CBF1E4F93CE00E5AB0E /* NoteMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteMapper.swift; path = Classes/NoteMapper.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		A0AE9CAF1E4F8E4800E5AB0E /* TunerKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				A0AE9CB01E4F8E4800E5AB0E /* TunerKitTests.swift */,
 				A0AE9CB21E4F8E4800E5AB0E /* Info.plist */,
 				A0AE9CC11E4F9A4600E5AB0E /* NoteMapperSpec.swift */,
 			);
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0AE9CB11E4F8E4800E5AB0E /* TunerKitTests.swift in Sources */,
 				A0AE9CC21E4F9A4600E5AB0E /* NoteMapperSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

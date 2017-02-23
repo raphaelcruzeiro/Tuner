@@ -14,6 +14,7 @@
 		A075FD5F1E4F8DA300EE508D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A075FD5E1E4F8DA300EE508D /* ViewController.swift */; };
 		A075FD641E4F8DA300EE508D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A075FD631E4F8DA300EE508D /* Assets.xcassets */; };
 		A075FD671E4F8DA300EE508D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A075FD651E4F8DA300EE508D /* LaunchScreen.storyboard */; };
+		A075FD721E4F8DA300EE508D /* TunerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A075FD711E4F8DA300EE508D /* TunerTests.swift */; };
 		D9ED708E4DA9C6A5FD9B2034 /* Pods_TunerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7894718B0F0571DB4C1EE3 /* Pods_TunerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		A075FD661E4F8DA300EE508D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A075FD681E4F8DA300EE508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A075FD6D1E4F8DA300EE508D /* TunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TunerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A075FD711E4F8DA300EE508D /* TunerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerTests.swift; sourceTree = "<group>"; };
 		A075FD731E4F8DA300EE508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEBA92E83430C45699F5D227 /* Pods_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2483323CDD8E2D8BDA99A9 /* Pods-Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tuner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tuner/Pods-Tuner.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		A075FD701E4F8DA300EE508D /* TunerTests */ = {
 			isa = PBXGroup;
 			children = (
+				A075FD711E4F8DA300EE508D /* TunerTests.swift */,
 				A075FD731E4F8DA300EE508D /* Info.plist */,
 			);
 			path = TunerTests;
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A075FD721E4F8DA300EE508D /* TunerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
