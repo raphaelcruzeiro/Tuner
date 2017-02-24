@@ -151,8 +151,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A075FD761E4F8DA300EE508D /* Build configuration list for PBXNativeTarget "Tuner" */;
 			buildPhases = (
-				A05567701E5DB1E4008E20A4 /* ShellScript */,
 				C3D2EDF712FD2D35420F7773 /* [CP] Check Pods Manifest.lock */,
+				A05567701E5DB1E4008E20A4 /* ShellScript */,
 				A075FD551E4F8DA300EE508D /* Sources */,
 				A075FD561E4F8DA300EE508D /* Frameworks */,
 				A075FD571E4F8DA300EE508D /* Resources */,

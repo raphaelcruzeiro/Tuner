@@ -40,6 +40,12 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        let env = ProcessInfo.processInfo.environment
+        
+        if (env["CI"] as? Bool ?? false) {
+            return
+        }
 
         tuner.start()
 
