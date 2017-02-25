@@ -159,6 +159,7 @@
 				9C97891AA8AC03DD70F3D9FE /* [CP] Embed Pods Frameworks */,
 				E417B12043EC193EAB0AC081 /* [CP] Copy Pods Resources */,
 				A0597DBE1E5B977C005B23DD /* Embed Frameworks */,
+				A00155641E61F39B008CE16A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -296,6 +297,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tuner/Pods-Tuner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A00155641E61F39B008CE16A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6bab27248dbcf10bd0ddf1fb604c186dd0f791c2 4a35f96d3d95f9a8f93a64a9438d41e1f8c376adfda18e7596469ad4b3b43aae";
 		};
 		A05567701E5DB1E4008E20A4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

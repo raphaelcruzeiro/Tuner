@@ -11,6 +11,8 @@ end
 target 'Tuner' do
   project 'Tuner.xcodeproj'
   
+  pod 'Fabric'
+  pod 'Crashlytics'
   pod 'Cartography'
   pod 'AudioKit'
 
@@ -22,7 +24,7 @@ end
 
 target 'TunerKit' do
     project 'TunerKit/TunerKit.xcodeproj'
-    
+
     pod 'AudioKit'
     
     target 'TunerKitTests' do
