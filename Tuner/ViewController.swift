@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 
         let env = ProcessInfo.processInfo.environment
 
-        if Bool(env["CI"] ?? "0") ?? false {
+        if env["SIMULATOR_HOST_HOME"]?.contains("travis") ?? false {
             return
         }
 
