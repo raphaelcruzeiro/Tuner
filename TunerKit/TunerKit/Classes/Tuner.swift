@@ -55,7 +55,6 @@ public class Tuner {
 
 
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [unowned self] _ in
-            print(self.tracker.amplitude)
             if self.tracker.amplitude > 0.04 {
                 let note = self.noteMapper.note(for: self.tracker.frequency)
                 self.delegate?.didMatchNote(note: note)

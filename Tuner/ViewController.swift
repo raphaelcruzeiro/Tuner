@@ -13,27 +13,47 @@ import AudioKit
 
 class ViewController: UIViewController {
 
+    let noteLabel = UILabel()
     let label = UILabel()
+    let meterView = VUMeterView()
+
     var tuner: Tuner!
 
     var plot: UIView?
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(label)
-        view.backgroundColor = .white
+        view.backgroundColor = .black
 
-        constrain(view, label) { view, label in
-            label.centerY == view.centerY
+        view.addSubview(noteLabel)
+        view.addSubview(meterView)
+
+        constrain(view, noteLabel, meterView) { view, label, meter in
+            label.top == view.top + 120
             label.height == 200
             label.left == view.left
             label.right == view.right
+
+            meter.top == label.bottom + 40
+            meter.left == view.left
+            meter.right == view.right
+            meter.height == 210
         }
 
         tuner = Tuner()
         tuner.delegate = self
 
+
+        noteLabel.textColor = .white
+        noteLabel.font = .systemFont(ofSize: 75)
+        noteLabel.textAlignment = .center
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 35)
         label.textAlignment = .center
         label.numberOfLines = 0
     }
@@ -43,11 +63,17 @@ class ViewController: UIViewController {
 
         let env = ProcessInfo.processInfo.environment
 
-        if env["SIMULATOR_HOST_HOME"]?.contains("travis") ?? false {
+        // Since AudioKit will try to access the microphone upon being initialized,
+        // a system dialog asking for microphone permission will appear and this
+        // causes the Simulator to hang on TravisCI. This is a workaround for that
+        // issue so that the tests can be run.
+        if env["HOME"]?.contains("travis") ?? false {
             return
         }
 
         tuner.start()
+
+        plot?.removeFromSuperview()
 
         plot = tuner.plot(
             frame: CGRect(
@@ -61,8 +87,8 @@ class ViewController: UIViewController {
         guard let plot = plot as? AKNodeOutputPlot else { return }
         plot.plotType = .buffer
         plot.shouldFill = true
-        plot.shouldMirror = true
-        plot.color = UIColor.blue
+        plot.color = .white
+        plot.backgroundColor = .clear
         view.addSubview(plot)
     }
 
@@ -76,7 +102,7 @@ class ViewController: UIViewController {
 extension ViewController: TunerDelegate {
 
     func didMatchNote(note: TunerKit.NoteMapper.Note) {
-        label.text = "\(note.nameWithSharp)\nOctave: \(note.octave)\nAccuracy: \(note.accuracy)"
+        noteLabel.text = note.nameWithSharp
     }
 
 }
