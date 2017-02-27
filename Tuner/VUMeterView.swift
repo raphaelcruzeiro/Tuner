@@ -24,6 +24,14 @@ class VUMeterView: UIView {
     private var needleLayer: CAShapeLayer?
     private var dialCenter: CGPoint!
     private var needleLength: CGFloat!
+    
+    // expose these to testing
+    var topLeft: CGPoint!
+    var topRight: CGPoint!
+    var bottomLeft: CGPoint!
+    var bottomRight: CGPoint!
+    var pointingTo: CGFloat!
+    
 
     init() {
         super.init(frame: .zero)
@@ -50,10 +58,10 @@ class VUMeterView: UIView {
         let upperArcRadius = r
         let bottomArcRadius = r * 0.4
 
-        let topLeft = pointOnCircle(center: dialCenter, radius: upperArcRadius, angle: start)
-        let topRight = pointOnCircle(center: dialCenter, radius: upperArcRadius, angle: end)
-        let bottomLeft = pointOnCircle(center: dialCenter, radius: bottomArcRadius, angle: start)
-        let bottomRight = pointOnCircle(center: dialCenter, radius: bottomArcRadius, angle: end)
+        topLeft = pointOnCircle(center: dialCenter, radius: upperArcRadius, angle: start)
+        topRight = pointOnCircle(center: dialCenter, radius: upperArcRadius, angle: end)
+        bottomLeft = pointOnCircle(center: dialCenter, radius: bottomArcRadius, angle: start)
+        bottomRight = pointOnCircle(center: dialCenter, radius: bottomArcRadius, angle: end)
 
         let cgStart =  5 * θ
         let cgEnd = 7 * θ
@@ -115,8 +123,8 @@ class VUMeterView: UIView {
     }
 
     private func set(value: Double) {
-        let pointingTo =  CGFloat.pi / 2 + (CGFloat.pi / 4) * CGFloat(value)
-
+        let delta = CGFloat(value) * CGFloat.pi / 4
+        pointingTo =  CGFloat.pi / 2 - delta
         let path = UIBezierPath()
         path.move(to: dialCenter)
         path.addLine(to: pointOnCircle(center: dialCenter, radius: needleLength, angle: pointingTo))
