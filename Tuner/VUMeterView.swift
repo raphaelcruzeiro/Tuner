@@ -11,7 +11,19 @@ import UIKit
 
 class VUMeterView: UIView {
 
-    var backgroundLayer: CAShapeLayer?
+    var value: Double = 0 {
+        didSet {
+            set(value: value)
+        }
+    }
+
+    // swiftlint:disable:next variable_name
+    private let θ = CGFloat.pi / 4
+
+    private var backgroundLayer: CAShapeLayer?
+    private var needleLayer: CAShapeLayer?
+    private var dialCenter: CGPoint!
+    private var needleLength: CGFloat!
 
     init() {
         super.init(frame: .zero)
@@ -27,27 +39,27 @@ class VUMeterView: UIView {
 
         backgroundLayer?.removeFromSuperlayer()
 
-        let θ = CGFloat.pi / 4
         let w = frame.width - 16
         let r = w * sin(θ)
+        needleLength = r - 5
 
-        let center = CGPoint(x: self.center.x, y: r)
+        dialCenter = CGPoint(x: center.x, y: r)
         let start: CGFloat = 3 * θ
         let end: CGFloat = θ
 
         let upperArcRadius = r
         let bottomArcRadius = r * 0.4
 
-        let topLeft = pointOnCircle(center: center, radius: upperArcRadius, angle: start)
-        let topRight = pointOnCircle(center: center, radius: upperArcRadius, angle: end)
-        let bottomLeft = pointOnCircle(center: center, radius: bottomArcRadius, angle: start)
-        let bottomRight = pointOnCircle(center: center, radius: bottomArcRadius, angle: end)
+        let topLeft = pointOnCircle(center: dialCenter, radius: upperArcRadius, angle: start)
+        let topRight = pointOnCircle(center: dialCenter, radius: upperArcRadius, angle: end)
+        let bottomLeft = pointOnCircle(center: dialCenter, radius: bottomArcRadius, angle: start)
+        let bottomRight = pointOnCircle(center: dialCenter, radius: bottomArcRadius, angle: end)
 
         let cgStart =  5 * θ
         let cgEnd = 7 * θ
 
-        let upperArc = drawArc(with: center, radius: upperArcRadius, start: cgStart, end: cgEnd)
-        let bottomArc = drawArc(with: center, radius:  bottomArcRadius, start: cgStart, end: cgEnd)
+        let upperArc = drawArc(with: dialCenter, radius: upperArcRadius, start: cgStart, end: cgEnd)
+        let bottomArc = drawArc(with: dialCenter, radius:  bottomArcRadius, start: cgStart, end: cgEnd)
         let leftLine = drawLine(from: topLeft, to: bottomLeft)
         let rightLine = drawLine(from: topRight, to: bottomRight)
 
@@ -55,6 +67,8 @@ class VUMeterView: UIView {
         layer.addSublayer(bottomArc)
         layer.addSublayer(leftLine)
         layer.addSublayer(rightLine)
+
+        set(value: value)
     }
 
     private func pointOnCircle(center: CGPoint, radius: CGFloat, angle: CGFloat) -> CGPoint {
@@ -98,6 +112,32 @@ class VUMeterView: UIView {
         shape.path = path.cgPath
 
         return shape
+    }
+
+    private func set(value: Double) {
+        let pointingTo =  CGFloat.pi / 2 + (CGFloat.pi / 4) * CGFloat(value)
+
+        let path = UIBezierPath()
+        path.move(to: dialCenter)
+        path.addLine(to: pointOnCircle(center: dialCenter, radius: needleLength, angle: pointingTo))
+
+        guard let needleLayer = needleLayer else {
+            self.needleLayer = CAShapeLayer()
+            self.needleLayer!.strokeColor = UIColor.white.cgColor
+            self.needleLayer!.lineWidth = 2
+            self.needleLayer!.path = path.cgPath
+            layer.addSublayer(self.needleLayer!)
+            return
+        }
+
+        let animation = CABasicAnimation(keyPath: "path")
+        animation.toValue = path.cgPath
+        animation.duration = 0.2
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        animation.fillMode = kCAFillModeBoth
+        animation.isRemovedOnCompletion = false
+
+        needleLayer.add(animation, forKey: animation.keyPath)
     }
 
 }

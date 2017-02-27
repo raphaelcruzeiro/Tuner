@@ -48,7 +48,6 @@ class ViewController: UIViewController {
         tuner = Tuner()
         tuner.delegate = self
 
-
         noteLabel.textColor = .white
         noteLabel.font = .systemFont(ofSize: 75)
         noteLabel.textAlignment = .center
@@ -103,6 +102,7 @@ extension ViewController: TunerDelegate {
 
     func didMatchNote(note: TunerKit.NoteMapper.Note) {
         noteLabel.text = note.nameWithSharp
+        meterView.value = note.accuracy
     }
 
 }
