@@ -15,6 +15,7 @@ target 'Tuner' do
   pod 'Crashlytics'
   pod 'Cartography'
   pod 'AudioKit'
+  pod 'pop'
 
   target 'TunerTests' do
     testFrameworks

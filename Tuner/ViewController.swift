@@ -10,6 +10,7 @@ import UIKit
 import Cartography
 import TunerKit
 import AudioKit
+import pop
 
 class ViewController: UIViewController {
 
@@ -96,6 +97,26 @@ class ViewController: UIViewController {
         tuner.stop()
     }
 
+    fileprivate func popNoteLabel() {
+        let animation = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)!
+        animation.springBounciness = 20
+        animation.toValue = NSValue(cgSize: CGSize(width: 2, height: 2))
+        animation.removedOnCompletion = true
+
+        let backToNormalAnimation = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)!
+        backToNormalAnimation.springBounciness = 20
+        backToNormalAnimation.toValue = NSValue(cgSize: CGSize(width: 1, height: 1))
+        backToNormalAnimation.removedOnCompletion = true
+
+        animation.completionBlock = { _, finished in
+            if finished {
+                self.noteLabel.pop_add(backToNormalAnimation, forKey: "pop")
+            }
+        }
+
+        noteLabel.pop_add(animation, forKey: "pop")
+    }
+
 }
 
 extension ViewController: TunerDelegate {
@@ -103,6 +124,10 @@ extension ViewController: TunerDelegate {
     func didMatchNote(note: TunerKit.NoteMapper.Note) {
         noteLabel.text = note.nameWithSharp
         meterView.value = note.accuracy
+
+        if note.accuracy > -0.1 && note.accuracy < 0.1 {
+            popNoteLabel()
+        }
     }
 
 }
