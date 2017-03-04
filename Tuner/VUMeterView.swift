@@ -24,14 +24,14 @@ class VUMeterView: UIView {
     private var needleLayer: CAShapeLayer?
     private var dialCenter: CGPoint!
     private var needleLength: CGFloat!
-    
+
     // expose these to testing
     var topLeft: CGPoint!
     var topRight: CGPoint!
     var bottomLeft: CGPoint!
     var bottomRight: CGPoint!
     var pointingTo: CGFloat!
-    
+
 
     init() {
         super.init(frame: .zero)
@@ -70,11 +70,13 @@ class VUMeterView: UIView {
         let bottomArc = drawArc(with: dialCenter, radius:  bottomArcRadius, start: cgStart, end: cgEnd)
         let leftLine = drawLine(from: topLeft, to: bottomLeft)
         let rightLine = drawLine(from: topRight, to: bottomRight)
+        let bottomCircle = drawCircle(center: dialCenter, radius: 25)
 
         layer.addSublayer(upperArc)
         layer.addSublayer(bottomArc)
         layer.addSublayer(leftLine)
         layer.addSublayer(rightLine)
+        layer.addSublayer(bottomCircle)
 
         set(value: value)
     }
@@ -95,6 +97,15 @@ class VUMeterView: UIView {
         path.move(to: from)
         path.addLine(to: to)
 
+        shape.path = path.cgPath
+        return shape
+    }
+
+    private func drawCircle(center: CGPoint, radius: CGFloat) -> CAShapeLayer {
+        let shape = CAShapeLayer()
+        shape.fillColor = UIColor.white.cgColor
+        let path = UIBezierPath()
+        path.addArc(withCenter: center, radius: radius, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
         shape.path = path.cgPath
         return shape
     }
@@ -123,15 +134,26 @@ class VUMeterView: UIView {
     }
 
     private func set(value: Double) {
+        let needleBaseWidth: CGFloat = 25
         let delta = CGFloat(value) * CGFloat.pi / 4
         pointingTo =  CGFloat.pi / 2 - delta
+        let opposite = needleBaseWidth / 2
+
+        let p1 = dialCenter!
+        let p2 = pointOnCircle(center: dialCenter, radius: needleLength, angle: pointingTo)
+        let p3 = findP3(p1: p1, p2: p2, opposite: opposite, rightSide: true)
+        let p4 = findP3(p1: p1, p2: p2, opposite: opposite, rightSide: false)
+
         let path = UIBezierPath()
-        path.move(to: dialCenter)
-        path.addLine(to: pointOnCircle(center: dialCenter, radius: needleLength, angle: pointingTo))
+        path.move(to: p2)
+        path.addLine(to: p3)
+        path.addLine(to: p4)
+        path.addLine(to: p2)
 
         guard let needleLayer = needleLayer else {
             self.needleLayer = CAShapeLayer()
             self.needleLayer!.strokeColor = UIColor.white.cgColor
+            self.needleLayer!.fillColor = UIColor.white.cgColor
             self.needleLayer!.lineWidth = 2
             self.needleLayer!.path = path.cgPath
             layer.addSublayer(self.needleLayer!)
@@ -148,4 +170,16 @@ class VUMeterView: UIView {
         needleLayer.add(animation, forKey: animation.keyPath)
     }
 
+    // swiftlint:disable:next variable_name
+    private func findP3(p1: CGPoint, p2: CGPoint, opposite: CGFloat, rightSide: Bool) -> CGPoint {
+        let slopeA = (p2.y - p1.y) / (p2.x - p1.x)
+        let slopeB = -1 / slopeA
+
+        let factor: CGFloat = rightSide ? 1 : -1
+
+        return CGPoint(
+            x: p1.x + (1 / sqrt(1 + pow(slopeB, 2)) * opposite) * factor,
+            y: p1.y + (slopeB + sqrt(1 + pow(slopeB, 2)) * opposite) * factor
+        )
+    }
 }
