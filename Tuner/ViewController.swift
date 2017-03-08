@@ -25,6 +25,10 @@ class ViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +49,6 @@ class ViewController: UIViewController {
             meter.right == view.right
             meter.height == 210
         }
-
-        tuner = Tuner()
-        tuner.delegate = self
 
         noteLabel.textColor = .white
         noteLabel.font = .systemFont(ofSize: 75)
@@ -70,7 +71,9 @@ class ViewController: UIViewController {
         if env["HOME"]?.contains("travis") ?? false {
             return
         }
-
+        
+        tuner = Tuner()
+        tuner.delegate = self
         tuner.start()
 
         plot?.removeFromSuperview()
@@ -95,6 +98,7 @@ class ViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         tuner.stop()
+        tuner = nil
     }
 
     fileprivate func popNoteLabel() {
