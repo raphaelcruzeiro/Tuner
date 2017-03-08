@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
 
         UIApplication.shared.isIdleTimerDisabled = true
-        
+
         return true
     }
 

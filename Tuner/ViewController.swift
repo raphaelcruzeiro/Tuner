@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         if env["HOME"]?.contains("travis") ?? false {
             return
         }
-        
+
         tuner = Tuner()
         tuner.delegate = self
         tuner.start()
