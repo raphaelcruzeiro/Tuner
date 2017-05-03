@@ -1,10 +1,10 @@
 PODS:
-  - AudioKit (3.5.3)
-  - Cartography (1.0.1)
-  - Crashlytics (3.8.3):
+  - AudioKit (3.6)
+  - Cartography (1.1.0)
+  - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
-  - Nimble (6.0.1)
+  - Nimble (7.0.0)
   - pop (1.0.9)
   - Quick (1.1.0)
 
@@ -18,14 +18,14 @@ DEPENDENCIES:
   - Quick
 
 SPEC CHECKSUMS:
-  AudioKit: bf2ebc611bb9b8107dcbe14f8356c761ee8fcc12
-  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
-  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  AudioKit: 7823de92f3c9570178d2347042867b6a93be1464
+  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
-  Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
+  Nimble: 874982b605d4d752fcac6be695d13c502de84b1b
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
 
 PODFILE CHECKSUM: 6bc1498a191f479077a7756ea376f6269ab6b6b8
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1.beta.1
