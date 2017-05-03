@@ -15,6 +15,7 @@ import pop
 class ViewController: UIViewController {
 
     let noteLabel = UILabel()
+    let octaveLabel = UILabel()
     let label = UILabel()
     let meterView = VUMeterView()
 
@@ -36,18 +37,24 @@ class ViewController: UIViewController {
         view.backgroundColor = .black
 
         view.addSubview(noteLabel)
+        view.addSubview(octaveLabel)
         view.addSubview(meterView)
 
-        constrain(view, noteLabel, meterView) { view, label, meter in
+        constrain(view, noteLabel, meterView, octaveLabel) { view, label, meter, octave in
             label.top == view.top + 120
-            label.height == 200
+            label.height == 50
             label.left == view.left
             label.right == view.right
 
-            meter.top == label.bottom + 40
+            meter.top == label.bottom + 190
             meter.left == view.left
             meter.right == view.right
             meter.height == 210
+
+            octave.height == label.height / 3
+            octave.width == 30
+            octave.top == label.bottom + 50
+            octave.centerX == view.centerX
         }
 
         noteLabel.textColor = .white
@@ -57,6 +64,9 @@ class ViewController: UIViewController {
         label.font = .systemFont(ofSize: 35)
         label.textAlignment = .center
         label.numberOfLines = 0
+        octaveLabel.textColor = .white
+        octaveLabel.textAlignment = .center
+        octaveLabel.font = .systemFont(ofSize: 22)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -127,6 +137,7 @@ extension ViewController: TunerDelegate {
 
     func didMatchNote(note: TunerKit.NoteMapper.Note) {
         noteLabel.text = note.nameWithSharp
+        octaveLabel.text = "\(note.octave)"
         meterView.value = note.accuracy
 
         if note.accuracy > -0.1 && note.accuracy < 0.1 {
