@@ -1,25 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuites name='TunerKitTests.xctest' tests='16' failures='0'>
-  <testsuite name='TunerTests.TunerTests' tests='2' failures='0'>
-    <testcase classname='TunerTests.TunerTests' name='testExample' time='0.001'/>
-    <testcase classname='TunerTests.TunerTests' name='testPerformanceExample' time='0.355'/>
+<testsuites name='TunerKitTests.xctest' tests='21' failures='0'>
+  <testsuite name='TunerTests.VUMeterViewSpec' tests='7' failures='0'>
+    <testcase classname='TunerTests.VUMeterViewSpec' name='should_correctly_initialize_the_upper_arc' time='0.007'/>
+    <testcase classname='TunerTests.VUMeterViewSpec' name='should_correctly_initialize_the_bottom_arc' time='0.002'/>
+    <testcase classname='TunerTests.VUMeterViewSpec' name='needle__value_is_0__should_set_the_needle_to_the_middle_of_the_dial' time='0.001'/>
+    <testcase classname='TunerTests.VUMeterViewSpec' name='needle__value_is__0_5__should_set_the_needle_to_the_middle_of_left_part_of_the_dial' time='0.001'/>
+    <testcase classname='TunerTests.VUMeterViewSpec' name='needle__value_is__1__should_set_the_needle_to_the_left_of_the_dial' time='0.001'/>
+    <testcase classname='TunerTests.VUMeterViewSpec' name='needle__value_is_0_5__should_set_the_needle_middle_of_the_right_part_of_the_dial' time='0.001'/>
+    <testcase classname='TunerTests.VUMeterViewSpec' name='needle__value_is_1__should_set_the_needle_to_the_right_of_the_dial' time='0.001'/>
   </testsuite>
   <testsuite name='TunerKitTests.NoteMapperSpec' tests='12' failures='0'>
-    <testcase classname='TunerKitTests.NoteMapperSpec' name='initialization__should_calculate_the_base_frequency' time='0.008'/>
+    <testcase classname='TunerKitTests.NoteMapperSpec' name='initialization__should_calculate_the_base_frequency' time='0.014'/>
     <testcase classname='TunerKitTests.NoteMapperSpec' name='initialization__should_initialize_the_frequency_table' time='0.004'/>
     <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_one_half_step_bellow_A_correctly' time='0.004'/>
-    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_one_half_step_above_A_correctly' time='0.004'/>
-    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_five_half_steps_above_A_correctly' time='0.004'/>
-    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_five_half_steps_bellow_A_correctly' time='0.003'/>
-    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_five_half_steps_bellow_A_correctly_2' time='0.003'/>
+    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_one_half_step_above_A_correctly' time='0.002'/>
+    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_five_half_steps_above_A_correctly' time='0.003'/>
+    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_five_half_steps_bellow_A_correctly' time='0.002'/>
+    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_five_half_steps_bellow_A_correctly_2' time='0.002'/>
     <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__note_calculation__should_calculate_14_half_steps_bellow_A_correctly' time='0.003'/>
     <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4' time='0.003'/>
-    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4_for_a_value_close_to_440_Hz' time='0.003'/>
-    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4b' time='0.004'/>
+    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4_for_a_value_close_to_440_Hz' time='0.004'/>
+    <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4b' time='0.003'/>
     <testcase classname='TunerKitTests.NoteMapperSpec' name='helper_methods__closest_note_matching__should_correctly_match_A4b_for_a_frequency_close_to_415_3_Hz' time='0.003'/>
   </testsuite>
   <testsuite name='TunerKitTests.TunerKitTests' tests='2' failures='0'>
     <testcase classname='TunerKitTests.TunerKitTests' name='testExample' time='0.001'/>
-    <testcase classname='TunerKitTests.TunerKitTests' name='testPerformanceExample' time='0.340'/>
+    <testcase classname='TunerKitTests.TunerKitTests' name='testPerformanceExample' time='0.312'/>
   </testsuite>
 </testsuites>
