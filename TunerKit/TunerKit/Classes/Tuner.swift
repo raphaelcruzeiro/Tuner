@@ -11,6 +11,7 @@ import AudioKit
 
 public protocol TunerDelegate: NSObjectProtocol {
     func didMatchNote(note: NoteMapper.Note)
+    func didLostNote()
 }
 
 public class Tuner {
@@ -20,6 +21,7 @@ public class Tuner {
     private var silence: AKBooster!
     private var timer: Timer?
     private var noteMapper: NoteMapper!
+    private var hasMatchedNote = false
 
     public weak var delegate: TunerDelegate?
 
@@ -56,8 +58,12 @@ public class Tuner {
 
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [unowned self] _ in
             if self.tracker.amplitude > 0.04 {
+                self.hasMatchedNote = true
                 let note = self.noteMapper.note(for: self.tracker.frequency)
                 self.delegate?.didMatchNote(note: note)
+            } else if self.hasMatchedNote {
+                self.hasMatchedNote = false
+                self.delegate?.didLostNote()
             }
         }
     }

@@ -103,6 +103,8 @@ class ViewController: UIViewController {
         plot.color = .white
         plot.backgroundColor = .clear
         view.addSubview(plot)
+
+        meterView.value = -1
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -131,9 +133,26 @@ class ViewController: UIViewController {
         noteLabel.pop_add(animation, forKey: "pop")
     }
 
+    fileprivate func flashBackground() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+            self.view.backgroundColor = UIColor(colorLiteralRed: 0, green: 0.8, blue: 0, alpha: 1)
+        }, completion: nil)
+    }
+
+    fileprivate func fadeBackground() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+            self.view.backgroundColor = .black
+        }, completion: nil)
+    }
+
 }
 
 extension ViewController: TunerDelegate {
+
+    func didLostNote() {
+        fadeBackground()
+        meterView.value = -1
+    }
 
     func didMatchNote(note: TunerKit.NoteMapper.Note) {
         noteLabel.text = note.nameWithSharp
@@ -142,6 +161,9 @@ extension ViewController: TunerDelegate {
 
         if note.accuracy > -0.1 && note.accuracy < 0.1 {
             popNoteLabel()
+            flashBackground()
+        } else {
+            fadeBackground()
         }
     }
 
