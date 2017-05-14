@@ -55,9 +55,8 @@ public class Tuner {
         microphone.start()
         tracker.start()
 
-
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [unowned self] _ in
-            if self.tracker.amplitude > 0.04 {
+            if self.tracker.amplitude > 0.06 {
                 self.hasMatchedNote = true
                 let note = self.noteMapper.note(for: self.tracker.frequency)
                 self.delegate?.didMatchNote(note: note)

@@ -152,6 +152,8 @@ extension ViewController: TunerDelegate {
     func didLostNote() {
         fadeBackground()
         meterView.value = -1
+        noteLabel.text = ""
+        octaveLabel.text = ""
     }
 
     func didMatchNote(note: TunerKit.NoteMapper.Note) {
