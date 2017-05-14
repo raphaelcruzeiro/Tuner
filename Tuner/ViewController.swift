@@ -41,15 +41,15 @@ class ViewController: UIViewController {
         view.addSubview(meterView)
 
         constrain(view, noteLabel, meterView, octaveLabel) { view, label, meter, octave in
-            label.top == view.top + 120
+            label.top == meter.top / 2 - 25
             label.height == 50
             label.left == view.left
             label.right == view.right
 
-            meter.top == label.bottom + 190
+            meter.bottom == view.bottom
             meter.left == view.left
             meter.right == view.right
-            meter.height == 210
+            meter.height == meter.width * 0.80
 
             octave.height == label.height / 3
             octave.width == 30
@@ -91,9 +91,9 @@ class ViewController: UIViewController {
         plot = tuner.plot(
             frame: CGRect(
                 x: 0,
-                y: view.frame.height / 2 + 100,
+                y: view.frame.height - 100,
                 width: view.frame.size.width,
-                height: 300
+                height: 100
             )
         )
 
